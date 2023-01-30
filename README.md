@@ -13,7 +13,7 @@ Generating and checking PESEL
 ## General Information
 - Program can generate PESEL number
 - You can choose sex and date of birth to generate PESEL
-- You can check if PESEL is true via checksum
+- You can check if PESEL is real (via checksum)
 
 
 ## Technologies Used
