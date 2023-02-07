@@ -4,7 +4,7 @@ from tkinter import messagebox
 import tkinter as tk
 import tkinter.ttk as ttk
 
-data = ''
+date = ''
 
 
 def dob_from_pesel(pesel):
@@ -43,51 +43,51 @@ def check_pesel():
 
 def generate_pesel():
     global generated_pesel
-    if facet.get() == 1:
-        mez = [1, 3, 5, 7, 9]
-        m = random.choice(mez)
-        pole7 = random.randint(0, 9)
-        pole8 = random.randint(0, 9)
-        pole9 = random.randint(0, 9)
-        p0 = str(int(E1.get()[6]) * 1)
-        p1 = str(int(E1.get()[7]) * 3)
-        p2 = str(int(E1.get()[2]) * 7)
-        p3 = str(int(E1.get()[3]) * 9)
-        p4 = str(int(E1.get()[0]) * 1)
-        p5 = str(int(E1.get()[1]) * 3)
-        p6 = str(pole7 * 7)
-        p7 = str(pole8 * 9)
-        p8 = str(pole9 * 1)
-        p9m = str(m * 3)
-        sumamez = str(int(p0[-1]) + int(p1[-1]) + int(p2[-1]) + int(p3[-1]) + int(p4[-1]) +
-                      int(p5[-1]) + int(p6[-1]) + int(p7[-1]) + int(p8[-1]) + int(p9m[-1]))
-        suma_kontrolna_mez = 10 - int(sumamez[-1])
+    if man.get() == 1:
+        man_list = [1, 3, 5, 7, 9]
+        m = random.choice(man_list)
+        position_7 = random.randint(0, 9)
+        position_8 = random.randint(0, 9)
+        position_9 = random.randint(0, 9)
+        p_0 = str(int(E1.get()[6]) * 1)
+        p_1 = str(int(E1.get()[7]) * 3)
+        p_2 = str(int(E1.get()[2]) * 7)
+        p_3 = str(int(E1.get()[3]) * 9)
+        p_4 = str(int(E1.get()[0]) * 1)
+        p_5 = str(int(E1.get()[1]) * 3)
+        p_6 = str(position_7 * 7)
+        p_7 = str(position_8 * 9)
+        p_8 = str(position_9 * 1)
+        p_9 = str(m * 3)
+        sum_man = str(int(p_0[-1]) + int(p_1[-1]) + int(p_2[-1]) + int(p_3[-1]) + int(p_4[-1]) +
+                      int(p_5[-1]) + int(p_6[-1]) + int(p_7[-1]) + int(p_8[-1]) + int(p_9[-1]))
+        control_sum_man = 10 - int(sum_man[-1])
         generated_pesel = E1.get()[6] + E1.get()[7] + E1.get()[2] + E1.get()[3] + E1.get()[0] + E1.get()[1] + \
-            str(pole7) + str(pole8) + str(pole9) + \
-            str(m) + str(suma_kontrolna_mez)
+            str(position_7) + str(position_8) + str(position_9) + \
+            str(m) + str(control_sum_man)
         L4.config(text=generated_pesel)
-    if baba.get() == 1:
-        kob = [0, 2, 4, 6, 8]
-        k = random.choice(kob)
-        pole7 = random.randint(0, 9)
-        pole8 = random.randint(0, 9)
-        pole9 = random.randint(0, 9)
-        p0 = str(int(E1.get()[6]) * 1)
-        p1 = str(int(E1.get()[7]) * 3)
-        p2 = str(int(E1.get()[2]) * 7)
-        p3 = str(int(E1.get()[3]) * 9)
-        p4 = str(int(E1.get()[0]) * 1)
-        p5 = str(int(E1.get()[1]) * 3)
-        p6 = str(pole7 * 7)
-        p7 = str(pole8 * 9)
-        p8 = str(pole9 * 1)
-        p9k = str(k * 3)
-        sumakob = str(int(p0[-1]) + int(p1[-1]) + int(p2[-1]) + int(p3[-1]) + int(p4[-1]) +
-                      int(p5[-1]) + int(p6[-1]) + int(p7[-1]) + int(p8[-1]) + int(p9k[-1]))
-        suma_kontrolna_kob = 10 - int(sumakob[-1])
-        generated_pesel = E1.get()[6] + E1.get()[7] + E1.get()[2] + E1.get()[3] + E1.get()ta[0] + E1.get()[1] + \
-            str(pole7) + str(pole8) + str(pole9) + \
-            str(k) + str(suma_kontrolna_kob)
+    if woman.get() == 1:
+        woman_list = [0, 2, 4, 6, 8]
+        k = random.choice(woman_list)
+        position_7 = random.randint(0, 9)
+        position_8 = random.randint(0, 9)
+        position_9 = random.randint(0, 9)
+        p_0 = str(int(E1.get()[6]) * 1)
+        p_1 = str(int(E1.get()[7]) * 3)
+        p_2 = str(int(E1.get()[2]) * 7)
+        p_3 = str(int(E1.get()[3]) * 9)
+        p_4 = str(int(E1.get()[0]) * 1)
+        p_5 = str(int(E1.get()[1]) * 3)
+        p_6 = str(position_7 * 7)
+        p_7 = str(position_8 * 9)
+        p_8 = str(position_9 * 1)
+        p_9 = str(k * 3)
+        sum_woman = str(int(p_0[-1]) + int(p_1[-1]) + int(p_2[-1]) + int(p_3[-1]) + int(p_4[-1]) +
+                        int(p_5[-1]) + int(p_6[-1]) + int(p_7[-1]) + int(p_8[-1]) + int(p_9[-1]))
+        control_sum_woman = 10 - int(sum_woman[-1])
+        generated_pesel = E1.get()[6] + E1.get()[7] + E1.get()[2] + E1.get()[3] + E1.get()[0] + E1.get()[1] + \
+            str(position_7) + str(position_8) + str(position_9) + \
+            str(k) + str(control_sum_woman)
         L4.config(text=generated_pesel)
 
 
@@ -120,24 +120,24 @@ lastframe.pack(side=BOTTOM)
 L1 = Label(topframe, text="Data urodzenia")
 L1.pack(side=LEFT)
 
-data = StringVar
+date = StringVar
 E1 = Entry(topframe)
 E1.pack(side=RIGHT)
 
 L2 = Label(bottomframe, text="Wybierz płeć")
 L2.pack(side=LEFT)
 
-facet = IntVar()
-check_facet = Checkbutton(bottomframe,
-                          text="Mezczyzna",
-                          variable=facet)
-check_facet.pack()
+man = IntVar()
+check_man = Checkbutton(bottomframe,
+                        text="Mezczyzna",
+                        variable=man)
+check_man.pack()
 
-baba = IntVar()
-check_baba = Checkbutton(bottomframe,
-                         text="Kobieta",
-                         variable=baba)
-check_baba.pack()
+woman = IntVar()
+check_woman = Checkbutton(bottomframe,
+                          text="Kobieta",
+                          variable=woman)
+check_woman.pack()
 
 gen_button = Button(lastframe,
                     text="GENERATE",
