@@ -21,23 +21,26 @@ def sex_from_pesel(pesel):
 
 def check_pesel():
     global result
-    p0 = str(int(Enter1.get()[0]) * 1)
-    p1 = str(int(Enter1.get()[1]) * 3)
-    p2 = str(int(Enter1.get()[2]) * 7)
-    p3 = str(int(Enter1.get()[3]) * 9)
-    p4 = str(int(Enter1.get()[4]) * 1)
-    p5 = str(int(Enter1.get()[5]) * 3)
-    p6 = str(int(Enter1.get()[6]) * 7)
-    p7 = str(int(Enter1.get()[7]) * 9)
-    p8 = str(int(Enter1.get()[8]) * 1)
-    p9 = str(int(Enter1.get()[9]) * 3)
-    suma = str(int(p0[-1]) + int(p1[-1]) + int(p2[-1]) + int(p3[-1]) + int(p4[-1]) +
-               int(p5[-1]) + int(p6[-1]) + int(p7[-1]) + int(p8[-1]) + int(p9[-1]))
-    suma_kontrolna = 10 - int(suma[-1])
-    if suma_kontrolna == int(Enter1.get()[10]):
-        result = "PESEL poprawny, suma kontrolna się zgadza."
+    if len(Enter1.get()) == 11:
+        p0 = str(int(Enter1.get()[0]) * 1)
+        p1 = str(int(Enter1.get()[1]) * 3)
+        p2 = str(int(Enter1.get()[2]) * 7)
+        p3 = str(int(Enter1.get()[3]) * 9)
+        p4 = str(int(Enter1.get()[4]) * 1)
+        p5 = str(int(Enter1.get()[5]) * 3)
+        p6 = str(int(Enter1.get()[6]) * 7)
+        p7 = str(int(Enter1.get()[7]) * 9)
+        p8 = str(int(Enter1.get()[8]) * 1)
+        p9 = str(int(Enter1.get()[9]) * 3)
+        suma = str(int(p0[-1]) + int(p1[-1]) + int(p2[-1]) + int(p3[-1]) + int(p4[-1]) +
+                   int(p5[-1]) + int(p6[-1]) + int(p7[-1]) + int(p8[-1]) + int(p9[-1]))
+        suma_kontrolna = 10 - int(suma[-1])
+        if suma_kontrolna == int(Enter1.get()[10]):
+            result = "PESEL poprawny, suma kontrolna się zgadza."
+        else:
+            result = "Podany PESEL jest niepoprawny."
     else:
-        result = "Fałszywy PESEL"
+        result = "Niepoprawna ilość cyfr w PESELu"
     Lab4.config(text=result)
 
 
@@ -49,10 +52,17 @@ def generate_pesel():
         position_7 = random.randint(0, 9)
         position_8 = random.randint(0, 9)
         position_9 = random.randint(0, 9)
+        # 0  1 . 2  3 . 4  5  6  7
+        # 1  9 . 1  1 . 1  9  9  1
         p_0 = str(int(E1.get()[6]) * 1)
         p_1 = str(int(E1.get()[7]) * 3)
-        p_2 = str(int(E1.get()[2]) * 7)
-        p_3 = str(int(E1.get()[3]) * 9)
+        if E1.get()[2] == 0 and E1.get()[5] == 8:
+            p_2 = str(int(E1.get()[2]) * 7)
+            p_3 = str(int(E1.get()[3]) * 9)
+        if E1.get()[4] == 1 and E1.get()[5] == 9:
+            p_2 = str(int(E1.get()[2]) * 7)
+            p_3 = str(int(E1.get()[3]) * 9)
+
         p_4 = str(int(E1.get()[0]) * 1)
         p_5 = str(int(E1.get()[1]) * 3)
         p_6 = str(position_7 * 7)
@@ -90,14 +100,13 @@ def generate_pesel():
             str(k) + str(control_sum_woman)
         L4.config(text=generated_pesel)
 
-
-# dorobic wariant zeby bylo w sumie 11 liczb, a nie np. 12 w razie czego
 # dorobic wyjatki zeby nie wprowadzic blednych wartosci
 # w pasku wprowadzania ma być DDMMRRR
 # zrobic wersje okienkowa
 # generowanie tozsamosci z imionami i nazwiskami
 # opcja kopiowania peselu
 # zrobic plik readme
+
 
 win = tk.Tk()
 win.title("PESEL")
