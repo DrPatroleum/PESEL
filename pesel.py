@@ -7,9 +7,35 @@ import tkinter.ttk as ttk
 date = ''
 
 
-def dob_from_pesel(pesel):
-    print("Data urodzenia to " +
-          str(pesel[4:6]) + "-" + str(pesel[2:4]) + "-19" + (str(pesel[0:2])))
+def dob_from_pesel():
+    if Enter1.get()[2] == 1 or Enter1.get()[2] == 0:
+        dob_confirm = ("Data urodzenia to " +
+                       str(Enter1.get()[4:6]) + "-" + str(Enter1.get()[2:4]) + "-19" + (str(Enter1.get()[0:2])))
+    if Enter1.get()[2] == 8:
+        dob_confirm = ("Data urodzenia to " +
+                       str(Enter1.get()[4:6]) + "-0" + str(Enter1.get()[3]) + "-18" + (str(Enter1.get()[0:2])))
+    if Enter1.get()[2] == 9:
+        dob_confirm = ("Data urodzenia to " +
+                       str(Enter1.get()[4:6]) + "-1" + str(Enter1.get()[3]) + "-18" + (str(Enter1.get()[0:2])))
+    if Enter1.get()[2] == 2:
+        dob_confirm = ("Data urodzenia to " +
+                       str(Enter1.get()[4:6]) + "-0" + str(Enter1.get()[3]) + "-20" + (str(Enter1.get()[0:2])))
+    if Enter1.get()[2] == 3:
+        dob_confirm = ("Data urodzenia to " +
+                       str(Enter1.get()[4:6]) + "-1" + str(Enter1.get()[3]) + "-20" + (str(Enter1.get()[0:2])))
+    if Enter1.get()[2] == 4:
+        dob_confirm = ("Data urodzenia to " +
+                       str(Enter1.get()[4:6]) + "-0" + str(Enter1.get()[3]) + "-21" + (str(Enter1.get()[0:2])))
+    if Enter1.get()[2] == 5:
+        dob_confirm = ("Data urodzenia to " +
+                       str(Enter1.get()[4:6]) + "-1" + str(Enter1.get()[3]) + "-21" + (str(Enter1.get()[0:2])))
+    if Enter1.get()[2] == 6:
+        dob_confirm = ("Data urodzenia to " +
+                       str(Enter1.get()[4:6]) + "-0" + str(Enter1.get()[3]) + "-22" + (str(Enter1.get()[0:2])))
+    if Enter1.get()[2] == 7:
+        dob_confirm = ("Data urodzenia to " +
+                       str(Enter1.get()[4:6]) + "-1" + str(Enter1.get()[3]) + "-21" + (str(Enter1.get()[0:2])))
+    Lab5.config(text=dob_confirm)
 
 
 def sex_from_pesel():
@@ -44,6 +70,7 @@ def check_pesel():
     else:
         result = "Niepoprawna ilość cyfr w PESELu"
     sex_from_pesel()
+    dob_from_pesel()
     Lab4.config(text=result)
 
 
@@ -101,10 +128,8 @@ def generate_pesel():
         L4.config(text=generated_pesel)
 
 # dorobic wyjatki zeby nie wprowadzic blednych wartosci
-# w pasku wprowadzania ma być DDMMRRR
 # generowanie tozsamosci z imionami i nazwiskami
 # opcja kopiowania peselu
-# zrobic plik readme
 
 
 win = tk.Tk()
@@ -184,10 +209,17 @@ check_button = Button(midframe,
                       compound="center")
 check_button.pack()
 
-Lab3 = Label(downframe)
-Lab3.pack(side=LEFT)
+lastestframe = Frame(downframe)
+lastestframe.pack(side=BOTTOM)
 
-Lab4 = Label(downframe)
-Lab4.pack(side=LEFT)
+lastestframe2 = Frame(downframe)
+lastestframe2.pack(side=BOTTOM)
+Lab3 = Label(lastestframe)
+Lab3.pack(side=BOTTOM)
 
+Lab4 = Label(lastestframe)
+Lab4.pack(side=TOP)
+
+Lab5 = Label(lastestframe2)
+Lab5.pack(side=BOTTOM)
 win.mainloop()
