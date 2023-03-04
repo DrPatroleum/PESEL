@@ -12,11 +12,13 @@ def dob_from_pesel(pesel):
           str(pesel[4:6]) + "-" + str(pesel[2:4]) + "-19" + (str(pesel[0:2])))
 
 
-def sex_from_pesel(pesel):
-    if int(pesel[9]) % 2 == 0:
-        print("Kobieta")
+def sex_from_pesel():
+    if int(Enter1.get()[9]) % 2 == 0:
+        sex = "PESEL nalezy do kobiety."
+        Lab3.config(text=sex)
     else:
-        print("Męzczyna")
+        sex = "PESEL nalezy do mezczyzny"
+        Lab3.config(text=sex)
 
 
 def check_pesel():
@@ -41,6 +43,7 @@ def check_pesel():
             result = "Podany PESEL jest niepoprawny."
     else:
         result = "Niepoprawna ilość cyfr w PESELu"
+    sex_from_pesel()
     Lab4.config(text=result)
 
 
