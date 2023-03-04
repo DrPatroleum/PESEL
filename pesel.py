@@ -16,7 +16,7 @@ def sex_from_pesel(pesel):
     if int(pesel[9]) % 2 == 0:
         print("Kobieta")
     else:
-        print("Męczyna")
+        print("Męzczyna")
 
 
 def check_pesel():
@@ -54,15 +54,12 @@ def generate_pesel():
         position_9 = random.randint(0, 9)
         # 0  1 . 2  3 . 4  5  6  7
         # 1  9 . 1  1 . 1  9  9  1
+        # P 9  1  1  1  1  9  0  2  7  5  4
+        # P 0  1  2  3  4  5  6  7  8  9  sum
         p_0 = str(int(E1.get()[6]) * 1)
         p_1 = str(int(E1.get()[7]) * 3)
-        if E1.get()[2] == 0 and E1.get()[5] == 8:
-            p_2 = str(int(E1.get()[2]) * 7)
-            p_3 = str(int(E1.get()[3]) * 9)
-        if E1.get()[4] == 1 and E1.get()[5] == 9:
-            p_2 = str(int(E1.get()[2]) * 7)
-            p_3 = str(int(E1.get()[3]) * 9)
-
+        p_2 = str(int(E1.get()[2]) * 7)
+        p_3 = str(int(E1.get()[3]) * 9)
         p_4 = str(int(E1.get()[0]) * 1)
         p_5 = str(int(E1.get()[1]) * 3)
         p_6 = str(position_7 * 7)
@@ -102,7 +99,6 @@ def generate_pesel():
 
 # dorobic wyjatki zeby nie wprowadzic blednych wartosci
 # w pasku wprowadzania ma być DDMMRRR
-# zrobic wersje okienkowa
 # generowanie tozsamosci z imionami i nazwiskami
 # opcja kopiowania peselu
 # zrobic plik readme
@@ -126,7 +122,7 @@ bottomframe.pack(side=BOTTOM)
 
 lastframe = Frame(tab1_gen)
 lastframe.pack(side=BOTTOM)
-L1 = Label(topframe, text="Data urodzenia")
+L1 = Label(topframe, text="Data urodzenia (DDMMRRRR)")
 L1.pack(side=LEFT)
 
 date = StringVar
@@ -179,7 +175,7 @@ Enter1 = Entry(upframe)
 Enter1.pack(side=RIGHT)
 
 check_button = Button(midframe,
-                      text="GENERATE",
+                      text="CHECK",
                       command=check_pesel,
                       state=ACTIVE,
                       compound="center")
