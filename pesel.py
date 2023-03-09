@@ -76,15 +76,36 @@ def check_pesel():
 
 def generate_pesel():
     global generated_pesel
+    if E1.get().isdigit() == False:
+        info = "Nieprawidłowe znaki"
+        L4.config(text=info)
+    if len(E1.get()) > 8 or len(E1) < 8:
+        info = "Nieprawidłowa ilość cyfr"
+        L4.config(text=info)
     if man.get() == 1:
         num_list = [1, 3, 5, 7, 9]
-        # 0  1 . 2  3 . 4  5  6  7
-        # 1  9 . 1  1 . 1  9  9  1
-        # P 9  1  1  1  1  9  0  2  7  5  4
-        # P 0  1  2  3  4  5  6  7  8  9  sum
         position_1 = E1.get()[6]
         position_2 = E1.get()[7]
-        position_3 = E1.get()[2]
+        if E1.get()[4] == "1" and E1.get()[5] == "8" and E1.get()[2] == "0":
+            position_3 = 8
+        if E1.get()[4] == "1" and E1.get()[5] == "8" and E1.get()[2] == "1":
+            position_3 = 9
+        if E1.get()[4] == "2" and E1.get()[5] == "0" and E1.get()[2] == "0":
+            position_3 = 2
+        if E1.get()[4] == "2" and E1.get()[5] == "0" and E1.get()[2] == "1":
+            position_3 = 3
+        if E1.get()[4] == "2" and E1.get()[5] == "1" and E1.get()[2] == "0":
+            position_3 = 4
+        if E1.get()[4] == "2" and E1.get()[5] == "1" and E1.get()[2] == "1":
+            position_3 = 5
+        if E1.get()[4] == "2" and E1.get()[5] == "2" and E1.get()[2] == "0":
+            position_3 = 6
+        if E1.get()[4] == "2" and E1.get()[5] == "2" and E1.get()[2] == "1":
+            position_3 = 7
+        if E1.get()[4] == "1" and E1.get()[5] == "9" and E1.get()[2] == "0":
+            position_3 = E1.get()[2]
+        if E1.get()[4] == "1" and E1.get()[5] == "9" and E1.get()[2] == "1":
+            position_3 = E1.get()[2]
         position_4 = E1.get()[3]
         position_5 = E1.get()[0]
         position_6 = E1.get()[1]
@@ -93,7 +114,7 @@ def generate_pesel():
         position_9 = str(random.randint(0, 9))
         position_10 = random.choice(num_list)
         p_2 = position_2 * 3
-        p_3 = position_3 * 7
+        p_3 = str(position_3 * 7)
         p_4 = position_4 * 9
         p_6 = position_6 * 3
         p_7 = str(position_7 * 7)
@@ -102,32 +123,54 @@ def generate_pesel():
         sum = str(int(position_1[-1]) + int(p_2[-1]) + int(p_3[-1]) + int(p_4[-1]) + int(position_5[-1]) +
                   int(p_6[-1]) + int(p_7[-1]) + int(p_8[-1]) + int(position_9[-1]) + int(p_10[-1]))
         control_sum = 10 - int(sum[-1])
-        generated_pesel = E1.get()[6] + E1.get()[7] + E1.get()[2] + E1.get()[3] + E1.get()[0] + E1.get()[1] + \
+        generated_pesel = str(position_1) + str(position_2) + str(position_3) + str(position_4) + str(position_5) + str(position_6) + \
             str(position_7) + str(position_8) + str(position_9) + \
             str(position_10) + str(control_sum)
         L4.config(text=generated_pesel)
     if woman.get() == 1:
         num_list = [0, 2, 4, 6, 8]
-        x = random.choice(num_list)
+        position_1 = E1.get()[6]
+        position_2 = E1.get()[7]
+        if E1.get()[4] == "1" and E1.get()[5] == "8" and E1.get()[2] == "0":
+            position_3 = 8
+        if E1.get()[4] == "1" and E1.get()[5] == "8" and E1.get()[2] == "1":
+            position_3 = 9
+        if E1.get()[4] == "2" and E1.get()[5] == "0" and E1.get()[2] == "0":
+            position_3 = 2
+        if E1.get()[4] == "2" and E1.get()[5] == "0" and E1.get()[2] == "1":
+            position_3 = 3
+        if E1.get()[4] == "2" and E1.get()[5] == "1" and E1.get()[2] == "0":
+            position_3 = 4
+        if E1.get()[4] == "2" and E1.get()[5] == "1" and E1.get()[2] == "1":
+            position_3 = 5
+        if E1.get()[4] == "2" and E1.get()[5] == "2" and E1.get()[2] == "0":
+            position_3 = 6
+        if E1.get()[4] == "2" and E1.get()[5] == "2" and E1.get()[2] == "1":
+            position_3 = 7
+        if E1.get()[4] == "1" and E1.get()[5] == "9" and E1.get()[2] == "0":
+            position_3 = E1.get()[2]
+        if E1.get()[4] == "1" and E1.get()[5] == "9" and E1.get()[2] == "1":
+            position_3 = E1.get()[2]
+        position_4 = E1.get()[3]
+        position_5 = E1.get()[0]
+        position_6 = E1.get()[1]
         position_7 = random.randint(0, 9)
         position_8 = random.randint(0, 9)
-        position_9 = random.randint(0, 9)
-        p_0 = str(int(E1.get()[6]) * 1)
-        p_1 = str(int(E1.get()[7]) * 3)
-        p_2 = str(int(E1.get()[2]) * 7)
-        p_3 = str(int(E1.get()[3]) * 9)
-        p_4 = str(int(E1.get()[0]) * 1)
-        p_5 = str(int(E1.get()[1]) * 3)
-        p_6 = str(position_7 * 7)
-        p_7 = str(position_8 * 9)
-        p_8 = str(position_9 * 1)
-        p_9 = str(x * 3)
-        sum = str(int(p_0[-1]) + int(p_1[-1]) + int(p_2[-1]) + int(p_3[-1]) + int(p_4[-1]) +
-                  int(p_5[-1]) + int(p_6[-1]) + int(p_7[-1]) + int(p_8[-1]) + int(p_9[-1]))
+        position_9 = str(random.randint(0, 9))
+        position_10 = random.choice(num_list)
+        p_2 = position_2 * 3
+        p_3 = str(position_3 * 7)
+        p_4 = position_4 * 9
+        p_6 = position_6 * 3
+        p_7 = str(position_7 * 7)
+        p_8 = str(position_8 * 9)
+        p_10 = str(position_10 * 3)
+        sum = str(int(position_1[-1]) + int(p_2[-1]) + int(p_3[-1]) + int(p_4[-1]) + int(position_5[-1]) +
+                  int(p_6[-1]) + int(p_7[-1]) + int(p_8[-1]) + int(position_9[-1]) + int(p_10[-1]))
         control_sum = 10 - int(sum[-1])
-        generated_pesel = E1.get()[6] + E1.get()[7] + E1.get()[2] + E1.get()[3] + E1.get()[0] + E1.get()[1] + \
+        generated_pesel = str(position_1) + str(position_2) + str(position_3) + str(position_4) + str(position_5) + str(position_6) + \
             str(position_7) + str(position_8) + str(position_9) + \
-            str(x) + str(control_sum)
+            str(position_10) + str(control_sum)
         L4.config(text=generated_pesel)
 
 # dorobic wyjatki zeby nie wprowadzic blednych wartosci
