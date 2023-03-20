@@ -6,6 +6,434 @@ import tkinter.ttk as ttk
 
 date = ''
 
+women_names = ["ANNA", "KATARZYNA", "MARIA", "MAŁGORZATA", "AGNIESZKA", "BARBARA", "EWA", "MAGDALENA", "ELŻBIETA", "KRYSTYNA", "JOANNA",
+               "ALEKSANDRA", "MONIKA", "ZOFIA", "TERESA", "NATALIA", "JULIA", "DANUTA", "KAROLINA", "MARTA", "BEATA", "DOROTA", "ALICJA", "HALINA",
+               "JADWIGA", "JOLANTA", "IWONA", "GRAŻYNA", "JANINA", "PAULINA", "ZUZANNA", "JUSTYNA", "IRENA", "HANNA", "WIKTORIA",
+               "BOŻENA", "RENATA", "URSZULA", "AGATA", "SYLWIA", "MAJA", "PATRYCJA", "HELENA", "IZABELA", "EMILIA", "OLIWIA", "ANETA", "WERONIKA",
+               "EWELINA", "MARTYNA", "KLAUDIA", "GABRIELA", "MARZENA", "LENA", "DOMINIKA", "MARIANNA", "AMELIA", "KINGA",
+               "STANISŁAWA", "EDYTA", "KAMILA", "WIESŁAWA", "ALINA", "WANDA", "DARIA", "LIDIA", "MARIOLA", "LUCYNA", "NIKOLA", "MILENA", "WIOLETTA",
+               "MIROSŁAWA", "LAURA", "ANTONINA", "ANGELIKA", "OLGA", "KAZIMIERA", "BOGUMIŁA", "ILONA", "MICHALINA", "SANDRA", "GENOWEFA", "KORNELIA",
+               "MARLENA", "HENRYKA", "ŁUCJA", "SABINA", "BOGUSŁAWA", "NINA", "JÓZEFA", "ANITA", "STEFANIA", "IGA", "LILIANA", "REGINA", "POLA",
+               "MARCELINA", "JAGODA", "CZESŁAWA", "ANIELA", "WŁADYSŁAWA", "KARINA", "WIOLETA", "ADRIANNA", "DIANA", "ROKSANA",
+               "DAGMARA", "SARA", "MALWINA", "ELIZA", "CECYLIA", "ŻANETA", "ZDZISŁAWA", "KLARA", "RÓŻA", "KAJA", "LEOKADIA", "BLANKA", "ANASTAZJA", "BRONISŁAWA",
+               "EUGENIA", "JULITA", "ALDONA", "ROZALIA", "DANIELA", "LILIANNA", "MAGDA", "CELINA", "MATYLDA", "ADRIANA", "HONORATA", "VERONIKA",
+               "NELA", "PAULA", "BRYGIDA", "AURELIA", "KALINA", "MARIKA", "GERTRUDA", "MIECZYSŁAWA", "SONIA", "ELWIRA", "ANDŻELIKA", "POLINA",
+               "ARLETA", "LUIZA", "ADELA", "JUDYTA", "NICOLE", "FRANCISZKA", "MARIANA", "NICOLA", "LIWIA", "JOWITA", "VANESSA", "ALFREDA"]
+women_surnames = ["NOWAK", "KOWALSKA", "WIŚNIEWSKA", "WÓJCIK", "KOWALCZYK", "KAMIŃSKA", "LEWANDOWSKA", "ZIELIŃSKA", "SZYMAŃSKA", "DĄBROWSKA",
+                  "WOŹNIAK", "KOZŁOWSKA", "MAZUR", "JANKOWSKA", "KWIATKOWSKA", "WOJCIECHOWSKA", "KRAWCZYK", "KACZMAREK", "PIOTROWSKA", "GRABOWSKA", "PAWŁOWSKA",
+                  "MICHALSKA", "KRÓL", "ZAJĄC", "WIECZOREK", "JABŁOŃSKA", "WRÓBEL", "NOWAKOWSKA", "MAJEWSKA", "OLSZEWSKA", "ADAMCZYK", "JAWORSKA", "MALINOWSKA",
+                  "STĘPIEŃ", "DUDEK", "GÓRSKA", "NOWICKA", "WITKOWSKA", "PAWLAK", "SIKORA", "WALCZAK", "RUTKOWSKA", "MICHALAK", "SZEWCZYK", "OSTROWSKA", "BARAN",
+                  "TOMASZEWSKA", "ZALEWSKA", "WRÓBLEWSKA", "PIETRZAK", "JASIŃSKA", "MARCINIAK", "SADOWSKA", "JAKUBOWSKA", "ZAWADZKA", "DUDA", "WŁODARCZYK",
+                  "CHMIELEWSKA", "BORKOWSKA", "BĄK", "WILK", "SOKOŁOWSKA", "SZCZEPAŃSKA", "SAWICKA", "LIS", "KUCHARSKA", "KALINOWSKA", "MACIEJEWSKA", "MAZUREK",
+                  "WYSOCKA", "KUBIAK", "KOŁODZIEJ", "CZARNECKA", "KAŹMIERCZAK", "URBAŃSKA", "SIKORSKA", "KRUPA", "SOBCZAK", "KRAJEWSKA", "GŁOWACKA", "ZAKRZEWSKA",
+                  "WASILEWSKA", "LASKOWSKA", "ZIÓŁKOWSKA", "GAJEWSKA", "KOZAK", "SZULC", "MRÓZ", "MAKOWSKA", "BRZEZIŃSKA", "PRZYBYLSKA", "KACZMARCZYK",
+                  "BARANOWSKA", "SZYMCZAK", "ADAMSKA", "BŁASZCZYK", "BOROWSKA", "GÓRECKA", "SZCZEPANIAK", "KANIA", "LESZCZYŃSKA", "JANIK", "CZERWIŃSKA",
+                  "CHOJNACKA", "LIPIŃSKA", "ANDRZEJEWSKA", "WESOŁOWSKA", "KOWALEWSKA", "MIKOŁAJCZYK", "MUCHA", "CIEŚLAK", "JAROSZ", "ZIĘBA", "KONIECZNA",
+                  "KOZIOŁ", "MARKOWSKA", "KOWALIK", "KOŁODZIEJCZYK", "MUSIAŁ", "BRZOZOWSKA", "DOMAŃSKA", "TOMCZYK", "ORŁOWSKA", "PAWLIK", "PIĄTEK", "NOWACKA",
+                  "KOPEĆ", "TOMCZAK", "KRUK", "KUREK", "ŻAK", "CIESIELSKA", "KOT", "MARKIEWICZ", "POLAK", "WAWRZYNIAK", "WOLSKA", "WÓJTOWICZ", "STANKIEWICZ",
+                  "JASTRZĘBSKA", "SOWA", "URBANIAK", "KARPIŃSKA", "CZAJKOWSKA", "STASIAK", "WIERZBICKA", "ŁUCZAK", "NAWROCKA", "PIASECKA", "KLIMEK", "DZIEDZIC",
+                  "SOSNOWSKA", "JANICKA", "BEDNAREK", "BIELECKA", "MILEWSKA", "GAJDA", "STEFAŃSKA", "MADEJ", "MAJCHRZAK", "LEŚNIAK", "JÓŹWIAK", "MAJ", "URBAN",
+                  "KOWAL", "ŚLIWIŃSKA", "SKIBA", "MAŁECKA", "BEDNARCZYK", "SOCHA", "DOBROWOLSKA", "MICHALIK", "ROMANOWSKA", "DOMAGAŁA", "RATAJCZAK", "WRONA",
+                  "WILCZYŃSKA", "KASPRZAK", "MATUSZEWSKA", "ORZECHOWSKA", "ŚWIĄTEK", "OLEJNICZAK", "PAJĄK", "RYBAK", "KUROWSKA", "BUKOWSKA", "SOBOLEWSKA",
+                  "OWCZAREK", "MAZURKIEWICZ", "ŁUKASIK", "ROGOWSKA", "OLEJNIK", "GRZELAK", "KĘDZIERSKA", "KOSIŃSKA", "BARAŃSKA", "MATUSIAK", "SOBCZYK"]
+men_names = [PIOTR
+             KRZYSZTOF
+             ANDRZEJ
+             TOMASZ
+             PAWEŁ
+             MICHAŁ
+             JAN
+             MARCIN
+             JAKUB
+             ADAM
+             ŁUKASZ
+             MAREK
+             GRZEGORZ
+             MATEUSZ
+             STANISŁAW
+             WOJCIECH
+             MARIUSZ
+             DARIUSZ
+             MACIEJ
+             ZBIGNIEW
+             RAFAŁ
+             ROBERT
+             KAMIL
+             JERZY
+             DAWID
+             SZYMON
+             JACEK
+             KACPER
+             JÓZEF
+             RYSZARD
+             TADEUSZ
+             BARTOSZ
+             ARTUR
+             JAROSŁAW
+             SŁAWOMIR
+             SEBASTIAN
+             JANUSZ
+             DAMIAN
+             MIROSŁAW
+             PATRYK
+             ROMAN
+             DANIEL
+             FILIP
+             HENRYK
+             ANTONI
+             PRZEMYSŁAW
+             KAROL
+             ALEKSANDER
+             ADRIAN
+             KAZIMIERZ
+             WIESŁAW
+             MARIAN
+             ARKADIUSZ
+             DOMINIK
+             FRANCISZEK
+             MIKOŁAJ
+             BARTŁOMIEJ
+             LESZEK
+             WIKTOR
+             KRYSTIAN
+             WALDEMAR
+
+             RADOSŁAW
+             BOGDAN
+             ZDZISŁAW
+             KONRAD
+             IGOR
+             HUBERT
+             EDWARD
+             MIECZYSŁAW
+             OSKAR
+             MARCEL
+             WŁADYSŁAW
+             CZESŁAW
+             MAKSYMILIAN
+
+
+             EUGENIUSZ
+             MIŁOSZ
+             BOGUSŁAW
+             IRENEUSZ
+             NIKODEM
+
+             STEFAN
+             WITOLD
+             LEON
+             OLIWIER
+             SYLWESTER
+             ZYGMUNT
+
+             ALAN
+
+             WŁODZIMIERZ
+             CEZARY
+             ZENON
+
+             GABRIEL
+             IGNACY
+             JULIAN
+             NORBERT
+
+             TYMON
+             TYMOTEUSZ
+
+             FABIAN
+
+             BŁAŻEJ
+
+             VASYL
+
+             VLADYSLAV
+             ARTEM
+             OLEH
+             ERYK
+             EMIL
+             VIKTOR
+
+             LECH
+             BRONISŁAW
+             WACŁAW
+
+             NATAN
+             KSAWERY
+             DENYS
+             BORYS
+             BOLESŁAW
+             RUSLAN
+             REMIGIUSZ
+             OLAF
+             BERNARD
+             KAJETAN
+
+             PAVLO
+             KUBA
+             EDMUND
+
+             LUCJAN
+             BRUNO
+             ALBERT
+
+             TOBIASZ
+
+             ROMUALD
+             GRACJAN
+             SEWERYN
+             SZCZEPAN
+
+             DAVID
+
+             ANTON
+
+
+             ALEXANDER
+             KORNEL
+             OLIVIER
+
+             ALFRED
+             ERNEST
+             NAZAR
+             JOACHIM
+
+             LUDWIK
+             STANISLAV
+             LESŁAW
+             ALEX
+             BOGUMIŁ
+             SIARHEI
+             JĘDRZEJ
+             TARAS
+             GERARD
+
+             FELIKS
+
+
+
+             LEONARD
+
+             JULIUSZ
+             DENIS
+             ALEKS
+             KLAUDIUSZ
+             OLIVER
+             DORIAN
+             TEODOR
+             NIKITA
+             ALOJZY
+
+             MARTIN
+             NATANIEL
+
+
+             OLEG
+
+             MICHAEL
+
+             GUSTAW
+             KONSTANTY
+             CYPRIAN]
+men_surnames = [NOWAK
+                KOWALSKI
+                WIŚNIEWSKI
+                WÓJCIK
+                KOWALCZYK
+                KAMIŃSKI
+                LEWANDOWSKI
+                ZIELIŃSKI
+                WOŹNIAK
+                SZYMAŃSKI
+                DĄBROWSKI
+                KOZŁOWSKI
+                MAZUR
+                JANKOWSKI
+                KWIATKOWSKI
+                WOJCIECHOWSKI
+                KRAWCZYK
+                KACZMAREK
+                PIOTROWSKI
+                GRABOWSKI
+                ZAJĄC
+                PAWŁOWSKI
+                KRÓL
+                MICHALSKI
+                WRÓBEL
+                WIECZOREK
+                JABŁOŃSKI
+                NOWAKOWSKI
+                MAJEWSKI
+                OLSZEWSKI
+                DUDEK
+                JAWORSKI
+                STĘPIEŃ
+                MALINOWSKI
+                ADAMCZYK
+                GÓRSKI
+                PAWLAK
+                SIKORA
+                NOWICKI
+                WITKOWSKI
+                RUTKOWSKI
+                WALCZAK
+                BARAN
+                MICHALAK
+                SZEWCZYK
+                OSTROWSKI
+                TOMASZEWSKI
+                ZALEWSKI
+                WRÓBLEWSKI
+                PIETRZAK
+                JASIŃSKI
+                DUDA
+                MARCINIAK
+                SADOWSKI
+                BĄK
+                ZAWADZKI
+                JAKUBOWSKI
+                WILK
+                CHMIELEWSKI
+                BORKOWSKI
+                WŁODARCZYK
+                SOKOŁOWSKI
+                SZCZEPAŃSKI
+                SAWICKI
+                LIS
+                KUCHARSKI
+                KALINOWSKI
+                WYSOCKI
+                MAZUREK
+                KUBIAK
+                MACIEJEWSKI
+                KOŁODZIEJ
+                KAŹMIERCZAK
+                CZARNECKI
+                KONIECZNY
+                SOBCZAK
+                KRUPA
+                GŁOWACKI
+                URBAŃSKI
+                MRÓZ
+                ZAKRZEWSKI
+                WASILEWSKI
+                KRAJEWSKI
+                KOZAK
+                LASKOWSKI
+                SIKORSKI
+                ZIÓŁKOWSKI
+                GAJEWSKI
+                SZULC
+                MAKOWSKI
+                KACZMARCZYK
+                BRZEZIŃSKI
+                BARANOWSKI
+                PRZYBYLSKI
+                KANIA
+                SZYMCZAK
+                JANIK
+                BOROWSKI
+                BŁASZCZYK
+                ADAMSKI
+                GÓRECKI
+                SZCZEPANIAK
+                CHOJNACKI
+                LESZCZYŃSKI
+                KOZIOŁ
+                MUCHA
+                KOWALEWSKI
+                LIPIŃSKI
+                ANDRZEJEWSKI
+                CZERWIŃSKI
+                WESOŁOWSKI
+                MIKOŁAJCZYK
+                ZIĘBA
+                JAROSZ
+                CIEŚLAK
+                MUSIAŁ
+                KOWALIK
+                MARKOWSKI
+                KOŁODZIEJCZYK
+                KOPEĆ
+                BRZOZOWSKI
+                NOWACKI
+                PIĄTEK
+                ŻAK
+                DOMAŃSKI
+                PAWLIK
+                ORŁOWSKI
+                KUREK
+                CIESIELSKI
+                KOT
+                WÓJTOWICZ
+                TOMCZYK
+                TOMCZAK
+                KRUK
+                WAWRZYNIAK
+                POLAK
+                WOLSKI
+                MARKIEWICZ
+                SOWA
+                STASIAK
+                JASTRZĘBSKI
+                KARPIŃSKI
+                STANKIEWICZ
+                URBANIAK
+                KLIMEK
+                PIASECKI
+                ŁUCZAK
+                CZAJKOWSKI
+                WIERZBICKI
+                NAWROCKI
+                GAJDA
+                BIELECKI
+                DZIEDZIC
+                STEFAŃSKI
+                BEDNAREK
+                MADEJ
+                MILEWSKI
+                JANICKI
+                SOSNOWSKI
+                SKIBA
+                KOWAL
+                LEŚNIAK
+                MAJ
+                MAJCHRZAK
+                JÓŹWIAK
+                URBAN
+                ŚLIWIŃSKI
+                SOCHA
+                MAŁECKI
+                MAREK
+                DOMAGAŁA
+                BEDNARCZYK
+                KASPRZAK
+                DOBROWOLSKI
+                WRONA
+                PAJĄK
+                MICHALIK
+                MATUSZEWSKI
+                RATAJCZAK
+                OLEJNICZAK
+                ORZECHOWSKI
+                ŚWIĄTEK
+                WILCZYŃSKI
+                ROMANOWSKI
+                KUROWSKI
+                OLEJNIK
+                ŁUKASIK
+                ROGOWSKI
+                RYBAK
+                GRZELAK
+                MAZURKIEWICZ
+                BUKOWSKI
+                OWCZAREK
+                SROKA
+                SOBOLEWSKI
+                KOSIŃSKI
+                KĘDZIERSKI
+                BARAŃSKI
+                ZYCH]
+
 
 def dob_from_pesel():
     if Enter1.get()[2] == 1 or Enter1.get()[2] == 0:
