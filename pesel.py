@@ -36,403 +36,37 @@ women_surnames = ["NOWAK", "KOWALSKA", "WIŚNIEWSKA", "WÓJCIK", "KOWALCZYK", "K
                   "KOWAL", "ŚLIWIŃSKA", "SKIBA", "MAŁECKA", "BEDNARCZYK", "SOCHA", "DOBROWOLSKA", "MICHALIK", "ROMANOWSKA", "DOMAGAŁA", "RATAJCZAK", "WRONA",
                   "WILCZYŃSKA", "KASPRZAK", "MATUSZEWSKA", "ORZECHOWSKA", "ŚWIĄTEK", "OLEJNICZAK", "PAJĄK", "RYBAK", "KUROWSKA", "BUKOWSKA", "SOBOLEWSKA",
                   "OWCZAREK", "MAZURKIEWICZ", "ŁUKASIK", "ROGOWSKA", "OLEJNIK", "GRZELAK", "KĘDZIERSKA", "KOSIŃSKA", "BARAŃSKA", "MATUSIAK", "SOBCZYK"]
-men_names = [PIOTR
-             KRZYSZTOF
-             ANDRZEJ
-             TOMASZ
-             PAWEŁ
-             MICHAŁ
-             JAN
-             MARCIN
-             JAKUB
-             ADAM
-             ŁUKASZ
-             MAREK
-             GRZEGORZ
-             MATEUSZ
-             STANISŁAW
-             WOJCIECH
-             MARIUSZ
-             DARIUSZ
-             MACIEJ
-             ZBIGNIEW
-             RAFAŁ
-             ROBERT
-             KAMIL
-             JERZY
-             DAWID
-             SZYMON
-             JACEK
-             KACPER
-             JÓZEF
-             RYSZARD
-             TADEUSZ
-             BARTOSZ
-             ARTUR
-             JAROSŁAW
-             SŁAWOMIR
-             SEBASTIAN
-             JANUSZ
-             DAMIAN
-             MIROSŁAW
-             PATRYK
-             ROMAN
-             DANIEL
-             FILIP
-             HENRYK
-             ANTONI
-             PRZEMYSŁAW
-             KAROL
-             ALEKSANDER
-             ADRIAN
-             KAZIMIERZ
-             WIESŁAW
-             MARIAN
-             ARKADIUSZ
-             DOMINIK
-             FRANCISZEK
-             MIKOŁAJ
-             BARTŁOMIEJ
-             LESZEK
-             WIKTOR
-             KRYSTIAN
-             WALDEMAR
-
-             RADOSŁAW
-             BOGDAN
-             ZDZISŁAW
-             KONRAD
-             IGOR
-             HUBERT
-             EDWARD
-             MIECZYSŁAW
-             OSKAR
-             MARCEL
-             WŁADYSŁAW
-             CZESŁAW
-             MAKSYMILIAN
-
-
-             EUGENIUSZ
-             MIŁOSZ
-             BOGUSŁAW
-             IRENEUSZ
-             NIKODEM
-
-             STEFAN
-             WITOLD
-             LEON
-             OLIWIER
-             SYLWESTER
-             ZYGMUNT
-
-             ALAN
-
-             WŁODZIMIERZ
-             CEZARY
-             ZENON
-
-             GABRIEL
-             IGNACY
-             JULIAN
-             NORBERT
-
-             TYMON
-             TYMOTEUSZ
-
-             FABIAN
-
-             BŁAŻEJ
-
-             VASYL
-
-             VLADYSLAV
-             ARTEM
-             OLEH
-             ERYK
-             EMIL
-             VIKTOR
-
-             LECH
-             BRONISŁAW
-             WACŁAW
-
-             NATAN
-             KSAWERY
-             DENYS
-             BORYS
-             BOLESŁAW
-             RUSLAN
-             REMIGIUSZ
-             OLAF
-             BERNARD
-             KAJETAN
-
-             PAVLO
-             KUBA
-             EDMUND
-
-             LUCJAN
-             BRUNO
-             ALBERT
-
-             TOBIASZ
-
-             ROMUALD
-             GRACJAN
-             SEWERYN
-             SZCZEPAN
-
-             DAVID
-
-             ANTON
-
-
-             ALEXANDER
-             KORNEL
-             OLIVIER
-
-             ALFRED
-             ERNEST
-             NAZAR
-             JOACHIM
-
-             LUDWIK
-             STANISLAV
-             LESŁAW
-             ALEX
-             BOGUMIŁ
-             SIARHEI
-             JĘDRZEJ
-             TARAS
-             GERARD
-
-             FELIKS
-
-
-
-             LEONARD
-
-             JULIUSZ
-             DENIS
-             ALEKS
-             KLAUDIUSZ
-             OLIVER
-             DORIAN
-             TEODOR
-             NIKITA
-             ALOJZY
-
-             MARTIN
-             NATANIEL
-
-
-             OLEG
-
-             MICHAEL
-
-             GUSTAW
-             KONSTANTY
-             CYPRIAN]
-men_surnames = [NOWAK
-                KOWALSKI
-                WIŚNIEWSKI
-                WÓJCIK
-                KOWALCZYK
-                KAMIŃSKI
-                LEWANDOWSKI
-                ZIELIŃSKI
-                WOŹNIAK
-                SZYMAŃSKI
-                DĄBROWSKI
-                KOZŁOWSKI
-                MAZUR
-                JANKOWSKI
-                KWIATKOWSKI
-                WOJCIECHOWSKI
-                KRAWCZYK
-                KACZMAREK
-                PIOTROWSKI
-                GRABOWSKI
-                ZAJĄC
-                PAWŁOWSKI
-                KRÓL
-                MICHALSKI
-                WRÓBEL
-                WIECZOREK
-                JABŁOŃSKI
-                NOWAKOWSKI
-                MAJEWSKI
-                OLSZEWSKI
-                DUDEK
-                JAWORSKI
-                STĘPIEŃ
-                MALINOWSKI
-                ADAMCZYK
-                GÓRSKI
-                PAWLAK
-                SIKORA
-                NOWICKI
-                WITKOWSKI
-                RUTKOWSKI
-                WALCZAK
-                BARAN
-                MICHALAK
-                SZEWCZYK
-                OSTROWSKI
-                TOMASZEWSKI
-                ZALEWSKI
-                WRÓBLEWSKI
-                PIETRZAK
-                JASIŃSKI
-                DUDA
-                MARCINIAK
-                SADOWSKI
-                BĄK
-                ZAWADZKI
-                JAKUBOWSKI
-                WILK
-                CHMIELEWSKI
-                BORKOWSKI
-                WŁODARCZYK
-                SOKOŁOWSKI
-                SZCZEPAŃSKI
-                SAWICKI
-                LIS
-                KUCHARSKI
-                KALINOWSKI
-                WYSOCKI
-                MAZUREK
-                KUBIAK
-                MACIEJEWSKI
-                KOŁODZIEJ
-                KAŹMIERCZAK
-                CZARNECKI
-                KONIECZNY
-                SOBCZAK
-                KRUPA
-                GŁOWACKI
-                URBAŃSKI
-                MRÓZ
-                ZAKRZEWSKI
-                WASILEWSKI
-                KRAJEWSKI
-                KOZAK
-                LASKOWSKI
-                SIKORSKI
-                ZIÓŁKOWSKI
-                GAJEWSKI
-                SZULC
-                MAKOWSKI
-                KACZMARCZYK
-                BRZEZIŃSKI
-                BARANOWSKI
-                PRZYBYLSKI
-                KANIA
-                SZYMCZAK
-                JANIK
-                BOROWSKI
-                BŁASZCZYK
-                ADAMSKI
-                GÓRECKI
-                SZCZEPANIAK
-                CHOJNACKI
-                LESZCZYŃSKI
-                KOZIOŁ
-                MUCHA
-                KOWALEWSKI
-                LIPIŃSKI
-                ANDRZEJEWSKI
-                CZERWIŃSKI
-                WESOŁOWSKI
-                MIKOŁAJCZYK
-                ZIĘBA
-                JAROSZ
-                CIEŚLAK
-                MUSIAŁ
-                KOWALIK
-                MARKOWSKI
-                KOŁODZIEJCZYK
-                KOPEĆ
-                BRZOZOWSKI
-                NOWACKI
-                PIĄTEK
-                ŻAK
-                DOMAŃSKI
-                PAWLIK
-                ORŁOWSKI
-                KUREK
-                CIESIELSKI
-                KOT
-                WÓJTOWICZ
-                TOMCZYK
-                TOMCZAK
-                KRUK
-                WAWRZYNIAK
-                POLAK
-                WOLSKI
-                MARKIEWICZ
-                SOWA
-                STASIAK
-                JASTRZĘBSKI
-                KARPIŃSKI
-                STANKIEWICZ
-                URBANIAK
-                KLIMEK
-                PIASECKI
-                ŁUCZAK
-                CZAJKOWSKI
-                WIERZBICKI
-                NAWROCKI
-                GAJDA
-                BIELECKI
-                DZIEDZIC
-                STEFAŃSKI
-                BEDNAREK
-                MADEJ
-                MILEWSKI
-                JANICKI
-                SOSNOWSKI
-                SKIBA
-                KOWAL
-                LEŚNIAK
-                MAJ
-                MAJCHRZAK
-                JÓŹWIAK
-                URBAN
-                ŚLIWIŃSKI
-                SOCHA
-                MAŁECKI
-                MAREK
-                DOMAGAŁA
-                BEDNARCZYK
-                KASPRZAK
-                DOBROWOLSKI
-                WRONA
-                PAJĄK
-                MICHALIK
-                MATUSZEWSKI
-                RATAJCZAK
-                OLEJNICZAK
-                ORZECHOWSKI
-                ŚWIĄTEK
-                WILCZYŃSKI
-                ROMANOWSKI
-                KUROWSKI
-                OLEJNIK
-                ŁUKASIK
-                ROGOWSKI
-                RYBAK
-                GRZELAK
-                MAZURKIEWICZ
-                BUKOWSKI
-                OWCZAREK
-                SROKA
-                SOBOLEWSKI
-                KOSIŃSKI
-                KĘDZIERSKI
-                BARAŃSKI
-                ZYCH]
+men_names = ["PIOTR", "KRZYSZTOF", "ANDRZEJ", "TOMASZ", "PAWEŁ", "MICHAŁ", "JAN", "MARCIN", "JAKUB", "ADAM", "ŁUKASZ", "MAREK", "GRZEGORZ",
+             "MATEUSZ", "STANISŁAW", "WOJCIECH", "MARIUSZ", "DARIUSZ", "MACIEJ", "ZBIGNIEW", "RAFAŁ", "ROBERT", "KAMIL", "JERZY", "DAWID",
+             "SZYMON", "JACEK", "KACPER", "JÓZEF", "RYSZARD", "TADEUSZ", "BARTOSZ", "ARTUR", "JAROSŁAW", "SŁAWOMIR", "SEBASTIAN", "JANUSZ",
+             "DAMIAN", "MIROSŁAW", "PATRYK", "ROMAN", "DANIEL", "FILIP", "HENRYK", "ANTONI", "PRZEMYSŁAW", "KAROL", "ALEKSANDER", "ADRIAN",
+             "KAZIMIERZ", "WIESŁAW", "MARIAN", "ARKADIUSZ", "DOMINIK", "FRANCISZEK", "MIKOŁAJ", "BARTŁOMIEJ", "LESZEK", "WIKTOR", "KRYSTIAN",
+             "WALDEMAR", "RADOSŁAW", "BOGDAN", "ZDZISŁAW", "KONRAD", "IGOR", "HUBERT", "EDWARD", "MIECZYSŁAW", "OSKAR", "MARCEL", "WŁADYSŁAW",
+             "CZESŁAW", "MAKSYMILIAN", "EUGENIUSZ", "MIŁOSZ", "BOGUSŁAW", "IRENEUSZ", "NIKODEM", "STEFAN", "WITOLD", "LEON", "OLIWIER", "SYLWESTER",
+             "ZYGMUNT", "ALAN", "WŁODZIMIERZ", "CEZARY", "ZENON", "GABRIEL", "IGNACY", "JULIAN", "NORBERT", "TYMON", "TYMOTEUSZ", "FABIAN", "BŁAŻEJ",
+             "ERYK", "EMIL", "LECH", "BRONISŁAW", "WACŁAW", "NATAN", "KSAWERY", "BORYS", "BOLESŁAW", "REMIGIUSZ", "OLAF", "BERNARD", "KAJETAN", "KUBA",
+             "EDMUND", "LUCJAN", "BRUNO", "ALBERT", "TOBIASZ", "ROMUALD", "GRACJAN", "SEWERYN", "SZCZEPAN", "ALFRED", "ERNEST", "JOACHIM", "LUDWIK",
+             "LESŁAW", "BOGUMIŁ", "JĘDRZEJ", "GERARD", "FELIKS", "LEONARD", "JULIUSZ", "KLAUDIUSZ", "DORIAN", "TEODOR"]
+men_surnames = ["NOWAK", "KOWALSKI", "WIŚNIEWSKI", "WÓJCIK", "KOWALCZYK", "KAMIŃSKI", "LEWANDOWSKI", "ZIELIŃSKI", "WOŹNIAK", "ZYMAŃSKI", "DĄBROWSKI",
+                "KOZŁOWSKI", "MAZUR", "JANKOWSKI", "KWIATKOWSKI", "WOJCIECHOWSKI", "KRAWCZYK", "KACZMAREK", "PIOTROWSKI", "GRABOWSKI", "ZAJĄC",
+                "PAWŁOWSKI", "KRÓL", "MICHALSKI", "WRÓBEL", "WIECZOREK", "JABŁOŃSKI", "NOWAKOWSKI", "MAJEWSKI", "OLSZEWSKI", "DUDEK", "JAWORSKI",
+                "STĘPIEŃ", "MALINOWSKI", "ADAMCZYK", "GÓRSKI", "PAWLAK", "SIKORA", "NOWICKI", "WITKOWSKI", "RUTKOWSKI", "WALCZAK", "BARAN", "MICHALAK",
+                "SZEWCZYK", "OSTROWSKI", "TOMASZEWSKI", "ZALEWSKI", "WRÓBLEWSKI", "PIETRZAK", "JASIŃSKI", "DUDA", "MARCINIAK", "SADOWSKI", "BĄK",
+                "ZAWADZKI", "JAKUBOWSKI", "WILK", "CHMIELEWSKI", "BORKOWSKI", "WŁODARCZYK", "SOKOŁOWSKI", "SZCZEPAŃSKI", "SAWICKI", "LIS", "KUCHARSKI",
+                "KALINOWSKI", "WYSOCKI", "MAZUREK", "KUBIAK", "MACIEJEWSKI", "KOŁODZIEJ", "KAŹMIERCZAK", "CZARNECKI", "KONIECZNY", "SOBCZAK", "KRUPA",
+                "GŁOWACKI", "URBAŃSKI", "MRÓZ", "ZAKRZEWSKI", "WASILEWSKI", "KRAJEWSKI", "KOZAK", "LASKOWSKI", "SIKORSKI", "ZIÓŁKOWSKI", "GAJEWSKI", "SZULC",
+                "MAKOWSKI", "KACZMARCZYK", "BRZEZIŃSKI", "BARANOWSKI", "PRZYBYLSKI", "KANIA", "SZYMCZAK", "JANIK", "BOROWSKI", "BŁASZCZYK", "ADAMSKI",
+                "GÓRECKI", "SZCZEPANIAK", "CHOJNACKI", "LESZCZYŃSKI", "KOZIOŁ", "MUCHA", "KOWALEWSKI", "LIPIŃSKI", "ANDRZEJEWSKI", "CZERWIŃSKI",
+                "WESOŁOWSKI", "MIKOŁAJCZYK", "ZIĘBA", "JAROSZ", "CIEŚLAK", "MUSIAŁ", "KOWALIK", "MARKOWSKI", "KOŁODZIEJCZYK", "KOPEĆ", "BRZOZOWSKI",
+                "NOWACKI", "PIĄTEK", "ŻAK", "DOMAŃSKI", "PAWLIK", "ORŁOWSKI", "KUREK", "CIESIELSKI", "KOT", "WÓJTOWICZ", "TOMCZYK", "TOMCZAK", "KRUK",
+                "WAWRZYNIAK", "POLAK", "WOLSKI", "MARKIEWICZ", "SOWA", "STASIAK", "JASTRZĘBSKI", "KARPIŃSKI", "STANKIEWICZ", "URBANIAK", "KLIMEK", "PIASECKI",
+                "ŁUCZAK", "CZAJKOWSKI", "WIERZBICKI", "NAWROCKI", "GAJDA", "BIELECKI", "DZIEDZIC", "STEFAŃSKI", "BEDNAREK", "MADEJ", "MILEWSKI", "JANICKI",
+                "SOSNOWSKI", "SKIBA", "KOWAL", "LEŚNIAK", "MAJ", "MAJCHRZAK", "JÓŹWIAK", "URBAN", "ŚLIWIŃSKI", "SOCHA", "MAŁECKI", "MAREK", "DOMAGAŁA",
+                "BEDNARCZYK", "KASPRZAK", "DOBROWOLSKI", "WRONA", "PAJĄK", "MICHALIK", "MATUSZEWSKI", "RATAJCZAK", "OLEJNICZAK", "ORZECHOWSKI", "ŚWIĄTEK",
+                "WILCZYŃSKI", "ROMANOWSKI", "KUROWSKI", "OLEJNIK", "ŁUKASIK", "ROGOWSKI", "RYBAK", "GRZELAK", "MAZURKIEWICZ", "BUKOWSKI", "OWCZAREK", "SROKA",
+                "SOBOLEWSKI", "KOSIŃSKI", "KĘDZIERSKI", "BARAŃSKI", "ZYCH"]
+months = {"01": "stycznia", "02": "lutego", "03": "marca", "04": "kwietnia", "05": "maja", "06": "czerwca", "07": "lipca",
+          "08": "sierpnia", "09": "września", "10": "października", "11": "listopada", "12": "grudnia"}
 
 
 def dob_from_pesel():
@@ -601,10 +235,16 @@ def generate_pesel():
             str(position_10) + str(control_sum)
         L4.config(text=generated_pesel)
 
+
+def generate_man_personality():
+    name = random.choice(men_names)
+    last_name = random.choice(men_surnames)
+
+
 # dorobic wyjatki zeby nie wprowadzic blednych wartosci
 # generowanie tozsamosci z imionami i nazwiskami
 # opcja kopiowania peselu
-
+# dokonczyc opcje generowania tozsamosci
 
 win = tk.Tk()
 win.title("PESEL")
@@ -696,4 +336,24 @@ Lab4.pack(side=TOP)
 
 Lab5 = Label(lastestframe2)
 Lab5.pack(side=BOTTOM)
+
+tab3_check = ttk.Frame(tabGeneral)
+tabGeneral.add(tab3_check, text='Tworzenie tozsamosci')
+
+upperframe = Frame(tab3_check)
+upperframe.pack(side=TOP)
+
+downerframe = Frame(tab3_check)
+downerframe.pack(side=BOTTOM)
+
+check_button = Button(upperframe,
+                      text="MAKE NEW ONE",
+                      command=check_pesel,
+                      state=ACTIVE,
+                      compound="center")
+check_button.pack()
+
+Lab6 = Label(downerframe)
+Lab6.pack(side=BOTTOM)
+
 win.mainloop()
