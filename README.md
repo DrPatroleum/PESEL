@@ -15,6 +15,7 @@ Generating and checking PESEL
 - You can choose sex and date of birth to generate PESEL
 - You can check if PESEL is real (via checksum)
 - You can check sex and DOB from PESEL
+- You can generate a fictitious polish identity
 
 
 ## Technologies Used
@@ -22,11 +23,11 @@ Generating and checking PESEL
 
 
 ## Features
-Added GUI.
+Added GUI & generating a fictitious identity
 
 
 ## Project Status
-Project is in progress.
+Project is still in progress.
 
 
 ## Room for Improvement
