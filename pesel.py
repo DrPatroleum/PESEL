@@ -1,11 +1,11 @@
 import random
 from tkinter import *
 from tkinter import messagebox
+import datetime
 import tkinter as tk
 import tkinter.ttk as ttk
 
-date = ''
-
+data = ''
 women_names = ["ANNA", "KATARZYNA", "MARIA", "MAŁGORZATA", "AGNIESZKA", "BARBARA", "EWA", "MAGDALENA", "ELŻBIETA", "KRYSTYNA", "JOANNA",
                "ALEKSANDRA", "MONIKA", "ZOFIA", "TERESA", "NATALIA", "JULIA", "DANUTA", "KAROLINA", "MARTA", "BEATA", "DOROTA", "ALICJA", "HALINA",
                "JADWIGA", "JOLANTA", "IWONA", "GRAŻYNA", "JANINA", "PAULINA", "ZUZANNA", "JUSTYNA", "IRENA", "HANNA", "WIKTORIA",
@@ -65,48 +65,52 @@ men_surnames = ["NOWAK", "KOWALSKI", "WIŚNIEWSKI", "WÓJCIK", "KOWALCZYK", "KAM
                 "BEDNARCZYK", "KASPRZAK", "DOBROWOLSKI", "WRONA", "PAJĄK", "MICHALIK", "MATUSZEWSKI", "RATAJCZAK", "OLEJNICZAK", "ORZECHOWSKI", "ŚWIĄTEK",
                 "WILCZYŃSKI", "ROMANOWSKI", "KUROWSKI", "OLEJNIK", "ŁUKASIK", "ROGOWSKI", "RYBAK", "GRZELAK", "MAZURKIEWICZ", "BUKOWSKI", "OWCZAREK", "SROKA",
                 "SOBOLEWSKI", "KOSIŃSKI", "KĘDZIERSKI", "BARAŃSKI", "ZYCH"]
-months = {"01": "stycznia", "02": "lutego", "03": "marca", "04": "kwietnia", "05": "maja", "06": "czerwca", "07": "lipca",
-          "08": "sierpnia", "09": "września", "10": "października", "11": "listopada", "12": "grudnia"}
+months = ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca",
+          "lipca", "sierpnia", "września", "października", "listopada", "grudnia"]
+today = datetime.date.today()
+year = today.year
 
 
 def dob_from_pesel():
-    if Enter1.get()[2] == 1 or Enter1.get()[2] == 0:
-        dob_confirm = ("Data urodzenia to " +
-                       str(Enter1.get()[4:6]) + "-" + str(Enter1.get()[2:4]) + "-19" + (str(Enter1.get()[0:2])))
-    if Enter1.get()[2] == 8:
-        dob_confirm = ("Data urodzenia to " +
-                       str(Enter1.get()[4:6]) + "-0" + str(Enter1.get()[3]) + "-18" + (str(Enter1.get()[0:2])))
-    if Enter1.get()[2] == 9:
-        dob_confirm = ("Data urodzenia to " +
-                       str(Enter1.get()[4:6]) + "-1" + str(Enter1.get()[3]) + "-18" + (str(Enter1.get()[0:2])))
-    if Enter1.get()[2] == 2:
-        dob_confirm = ("Data urodzenia to " +
-                       str(Enter1.get()[4:6]) + "-0" + str(Enter1.get()[3]) + "-20" + (str(Enter1.get()[0:2])))
-    if Enter1.get()[2] == 3:
-        dob_confirm = ("Data urodzenia to " +
-                       str(Enter1.get()[4:6]) + "-1" + str(Enter1.get()[3]) + "-20" + (str(Enter1.get()[0:2])))
-    if Enter1.get()[2] == 4:
-        dob_confirm = ("Data urodzenia to " +
-                       str(Enter1.get()[4:6]) + "-0" + str(Enter1.get()[3]) + "-21" + (str(Enter1.get()[0:2])))
-    if Enter1.get()[2] == 5:
-        dob_confirm = ("Data urodzenia to " +
-                       str(Enter1.get()[4:6]) + "-1" + str(Enter1.get()[3]) + "-21" + (str(Enter1.get()[0:2])))
-    if Enter1.get()[2] == 6:
-        dob_confirm = ("Data urodzenia to " +
-                       str(Enter1.get()[4:6]) + "-0" + str(Enter1.get()[3]) + "-22" + (str(Enter1.get()[0:2])))
-    if Enter1.get()[2] == 7:
-        dob_confirm = ("Data urodzenia to " +
-                       str(Enter1.get()[4:6]) + "-1" + str(Enter1.get()[3]) + "-21" + (str(Enter1.get()[0:2])))
-    Lab5.config(text=dob_confirm)
+    global dob_confirm
+    if int(Enter1.get()[2]) == 1 or int(Enter1.get()[2]) == 0:
+        dob_confirm = ("Data urodzenia to " + str(Enter1.get()[4:6]) + "-" + str(
+            Enter1.get()[2:4]) + "-19" + (str(Enter1.get()[0:2])))
+    if int(Enter1.get()[2]) == 8:
+        dob_confirm = ("Data urodzenia to " + str(Enter1.get()
+                       [4:6]) + "-0" + str(Enter1.get()[3]) + "-18" + (str(Enter1.get()[0:2])))
+    if int(Enter1.get()[2]) == 9:
+        dob_confirm = ("Data urodzenia to " + str(Enter1.get()
+                       [4:6]) + "-1" + str(Enter1.get()[3]) + "-18" + (str(Enter1.get()[0:2])))
+    if int(Enter1.get()[2]) == 2:
+        dob_confirm = ("Data urodzenia to " + str(Enter1.get()
+                       [4:6]) + "-0" + str(Enter1.get()[3]) + "-20" + (str(Enter1.get()[0:2])))
+    if int(Enter1.get()[2]) == 3:
+        dob_confirm = ("Data urodzenia to " + str(Enter1.get()
+                       [4:6]) + "-1" + str(Enter1.get()[3]) + "-20" + (str(Enter1.get()[0:2])))
+    if int(Enter1.get()[2]) == 4:
+        dob_confirm = ("Data urodzenia to " + str(Enter1.get()
+                       [4:6]) + "-0" + str(Enter1.get()[3]) + "-21" + (str(Enter1.get()[0:2])))
+    if int(Enter1.get()[2]) == 5:
+        dob_confirm = ("Data urodzenia to " + str(Enter1.get()
+                       [4:6]) + "-1" + str(Enter1.get()[3]) + "-21" + (str(Enter1.get()[0:2])))
+    if int(Enter1.get()[2]) == 6:
+        dob_confirm = ("Data urodzenia to " + str(Enter1.get()
+                       [4:6]) + "-0" + str(Enter1.get()[3]) + "-22" + (str(Enter1.get()[0:2])))
+    if int(Enter1.get()[2]) == 7:
+        dob_confirm = ("Data urodzenia to " + str(Enter1.get()
+                       [4:6]) + "-1" + str(Enter1.get()[3]) + "-21" + (str(Enter1.get()[0:2])))
+    return dob_confirm
 
 
 def sex_from_pesel():
+    global sex
     if int(Enter1.get()[9]) % 2 == 0:
         sex = "PESEL nalezy do kobiety."
-        Lab3.config(text=sex)
+        return sex
     else:
         sex = "PESEL nalezy do mezczyzny"
-        Lab3.config(text=sex)
+        return sex
 
 
 def check_pesel():
@@ -131,9 +135,10 @@ def check_pesel():
             result = "Podany PESEL jest niepoprawny."
     else:
         result = "Niepoprawna ilość cyfr w PESELu"
-    sex_from_pesel()
     dob_from_pesel()
-    Lab4.config(text=result)
+    sex_from_pesel()
+    final_result = result + "\n" + dob_confirm + "\n" + sex
+    Lab4.config(text=final_result)
 
 
 def generate_pesel():
@@ -141,7 +146,7 @@ def generate_pesel():
     if E1.get().isdigit() == False:
         info = "Nieprawidłowe znaki"
         L4.config(text=info)
-    if len(E1.get()) > 8 or len(E1) < 8:
+    if len(E1.get()) > 8 or len(E1.get()) < 8:
         info = "Nieprawidłowa ilość cyfr"
         L4.config(text=info)
     if man.get() == 1:
@@ -236,15 +241,38 @@ def generate_pesel():
         L4.config(text=generated_pesel)
 
 
-def generate_man_personality():
-    name = random.choice(men_names)
-    last_name = random.choice(men_surnames)
-
+def generate_personality():
+    if man_opt.get() == 1:
+        name = random.choice(men_names)
+        last_name = random.choice(men_surnames)
+        year_of_birth = int(year) - int(EE.get())
+        date_of_birth = str(random.randint(
+            1, 28)) + " " + str(random.choice(months)) + " " + str(year_of_birth)
+        # dodac wariant gnerowania pesel
+        generated_personality = "Wygenerowana tozsamosc to:\n" + \
+            name + " " + last_name + "\nData urodzenia: " + date_of_birth
+        Lab6.config(text=generated_personality)
+    if woman_opt.get() == 1:
+        name = random.choice(women_names)
+        last_name = random.choice(women_surnames)
+        year_of_birth = int(year) - int(EE.get())
+        date_of_birth = str(random.randint(
+            1, 28)) + " " + str(random.choice(months)) + " " + str(year_of_birth)
+        # dodac wariant gnerowania pesel
+        generated_personality = "Wygenerowana tozsamosc to:\n" + \
+            name + " " + last_name + "\nData urodzenia: " + date_of_birth
+        Lab6.config(text=generated_personality)
+    if man_opt.get() == 1 and woman_opt.get() == 1:
+        generated_personality = "Wybierz tylko jedną płeć!"
+        Lab6.config(text=generated_personality)
+    if man_opt.get() == 0 and woman_opt.get() == 0:
+        generated_personality = "Wybierz płeć!"
+        Lab6.config(text=generated_personality)
 
 # dorobic wyjatki zeby nie wprowadzic blednych wartosci
-# generowanie tozsamosci z imionami i nazwiskami
 # opcja kopiowania peselu
 # dokonczyc opcje generowania tozsamosci
+
 
 win = tk.Tk()
 win.title("PESEL")
@@ -253,89 +281,86 @@ win.geometry('500x500')
 tabGeneral = ttk.Notebook(win)
 tabGeneral.pack()
 
+# Zakładka numer 1 GENEROWANIE PESEL
+
 tab1_gen = ttk.Frame(tabGeneral)
 tabGeneral.add(tab1_gen, text='Generowanie PESEL')
 
-topframe = Frame(tab1_gen)
-topframe.pack(side=TOP)
+topframe1 = Frame(tab1_gen)
+topframe1.pack(side=TOP)
 
-bottomframe = Frame(tab1_gen)
-bottomframe.pack(side=BOTTOM)
+midframe1 = Frame(tab1_gen)
+midframe1.pack(side=TOP)
 
-lastframe = Frame(tab1_gen)
-lastframe.pack(side=BOTTOM)
-L1 = Label(topframe, text="Data urodzenia (DDMMRRRR)")
-L1.pack(side=LEFT)
+lastframe1 = Frame(tab1_gen)
+lastframe1.pack(side=TOP)
 
-date = StringVar
-E1 = Entry(topframe)
-E1.pack(side=RIGHT)
+L1 = Label(topframe1, text="Data urodzenia (DDMMRRRR)")
+L1.pack(anchor=tk.W)
 
-L2 = Label(bottomframe, text="Wybierz płeć")
+data = StringVar
+E1 = Entry(topframe1, textvariable=data)
+E1.pack(anchor=tk.W)
+
+L2 = Label(midframe1, text="Wybierz płeć")
 L2.pack(side=LEFT)
 
 man = IntVar()
-check_man = Checkbutton(bottomframe,
+check_man = Checkbutton(midframe1,
                         text="Mezczyzna",
                         variable=man)
-check_man.pack()
+check_man.pack(anchor=tk.W)
 
 woman = IntVar()
-check_woman = Checkbutton(bottomframe,
+check_woman = Checkbutton(midframe1,
                           text="Kobieta",
                           variable=woman)
-check_woman.pack()
+check_woman.pack(anchor=tk.W)
 
-gen_button = Button(lastframe,
+gen_button = Button(lastframe1,
                     text="GENERATE",
                     command=generate_pesel,
                     state=ACTIVE,
                     compound="center")
-gen_button.pack()
+gen_button.pack(anchor=tk.W)
 
-L3 = Label(lastframe)
-L3.pack(side=LEFT)
+L3 = Label(lastframe1)
+L3.pack(anchor=tk.W)
 
-L4 = Label(lastframe)
-L4.pack(side=LEFT)
+L4 = Label(lastframe1)
+L4.pack(side=BOTTOM)
+
+# Zakładka numer 2 SPRAWDZANIE PESEL
 
 tab2_check = ttk.Frame(tabGeneral)
 tabGeneral.add(tab2_check, text='Sprawdzanie PESEL')
 
-upframe = Frame(tab2_check)
-upframe.pack(side=TOP)
+topframe2 = Frame(tab2_check)
+topframe2.pack(side=TOP)
 
-midframe = Frame(tab2_check)
-midframe.pack(side=BOTTOM)
+midframe2 = Frame(tab2_check)
+midframe2.pack(side=BOTTOM)
 
-downframe = Frame(tab2_check)
-downframe.pack(side=BOTTOM)
-Lab1 = Label(upframe, text="Wpisz PESEL")
+lastframe2 = Frame(tab2_check)
+lastframe2.pack(side=BOTTOM)
+
+Lab1 = Label(topframe2, text="Wpisz PESEL")
 Lab1.pack(side=LEFT)
 
-Enter1 = Entry(upframe)
+Enter1 = Entry(topframe2)
 Enter1.pack(side=RIGHT)
 
-check_button = Button(midframe,
+check_button = Button(midframe2,
                       text="CHECK",
                       command=check_pesel,
                       state=ACTIVE,
                       compound="center")
-check_button.pack()
+check_button.pack(anchor=tk.W)
 
-lastestframe = Frame(downframe)
-lastestframe.pack(side=BOTTOM)
-
-lastestframe2 = Frame(downframe)
-lastestframe2.pack(side=BOTTOM)
-Lab3 = Label(lastestframe)
-Lab3.pack(side=BOTTOM)
-
-Lab4 = Label(lastestframe)
+Lab4 = Label(lastframe2)
 Lab4.pack(side=TOP)
 
-Lab5 = Label(lastestframe2)
-Lab5.pack(side=BOTTOM)
+# Zakładka numer 3 TWORZENIE TOZSAMOSCI
 
 tab3_check = ttk.Frame(tabGeneral)
 tabGeneral.add(tab3_check, text='Tworzenie tozsamosci')
@@ -346,14 +371,32 @@ upperframe.pack(side=TOP)
 downerframe = Frame(tab3_check)
 downerframe.pack(side=BOTTOM)
 
-check_button = Button(upperframe,
-                      text="MAKE NEW ONE",
-                      command=check_pesel,
-                      state=ACTIVE,
-                      compound="center")
-check_button.pack()
+man_opt = IntVar()
+option_man = Checkbutton(upperframe,
+                         text="Mezczyzna",
+                         variable=man_opt)
+option_man.pack(anchor=tk.W)
+
+woman_opt = IntVar()
+option_woman = Checkbutton(upperframe,
+                           text="Kobieta",
+                           variable=woman_opt)
+option_woman.pack(anchor=tk.W)
+
+L7 = Label(upperframe, text="Wiek podany w latach:")
+L7.pack(anchor=tk.W)
+
+EE = Entry(upperframe)
+EE.pack(anchor=tk.W)
+
+makenew_button = Button(upperframe,
+                        text="MAKE NEW ONE",
+                        command=generate_personality,
+                        state=ACTIVE,
+                        compound="center")
+makenew_button.pack()
 
 Lab6 = Label(downerframe)
-Lab6.pack(side=BOTTOM)
+Lab6.pack(anchor=tk.W)
 
 win.mainloop()
