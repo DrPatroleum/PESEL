@@ -14,7 +14,7 @@ Generating and checking PESEL
 - Program can generate PESEL number
 - You can choose sex and date of birth to generate PESEL
 - You can check if PESEL is real (via checksum)
-- You can check sex and DOB from PESEL
+- You can check sex, DOB and zodiaq sign from PESEL
 - You can generate a fictitious polish identity
 
 
