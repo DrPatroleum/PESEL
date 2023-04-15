@@ -70,6 +70,89 @@ today = datetime.date.today()
 year = today.year
 
 
+def zodiaq_from_pesel():
+    global zodiaq
+    z_month = str(dob_confirm[20:22])
+    z_day = int(dob_confirm[17:19])
+    if z_month == "01":
+        if z_day >= 20:
+            zodiaq = "AQUARIUS"
+        elif z_day < 20:
+            zodiaq = "CAPRICORN"
+    if z_month == "02":
+        if z_day >= 19:
+            zodiaq = "PISCES"
+        elif z_day < 19:
+            zodiaq = "AQUARIUS"
+    if z_month == "03":
+        if z_day >= 21:
+            zodiaq = "ARIES"
+        elif z_day < 21:
+            zodiaq = "PISCES"
+    if z_month == "04":
+        if z_day >= 20:
+            zodiaq = "TAURUS"
+        elif z_day < 20:
+            zodiaq = "ARIES"
+    if z_month == "05":
+        if z_day >= 21:
+            zodiaq = "GEMINI"
+        elif z_day < 21:
+            zodiaq = "TAURUS"
+    if z_month == "06":
+        if z_day >= 21:
+            zodiaq = "CANCER"
+        elif z_day < 21:
+            zodiaq = "GEMINI"
+    if z_month == "07":
+        if z_day >= 23:
+            zodiaq = "LEO"
+        elif z_day < 23:
+            zodiaq = "CANCER"
+    if z_month == "08":
+        if z_day >= 23:
+            zodiaq = "VIRGO"
+        elif z_day < 23:
+            zodiaq = "LEO"
+    if z_month == "09":
+        if z_day >= 23:
+            zodiaq = "LIBRA"
+        elif z_day < 23:
+            zodiaq = "VIRGO"
+    if z_month == "10":
+        if z_day >= 23:
+            zodiaq = "SCORPIO"
+        elif z_day < 23:
+            zodiaq = "LIBRA"
+    if z_month == "11":
+        if z_day >= 22:
+            zodiaq = "SAGITTARIUS"
+        elif z_day < 22:
+            zodiaq = "SCORPIO"
+    if z_month == "12":
+        if z_day >= 22:
+            zodiaq = "CAPRICORN"
+        elif z_day < 22:
+            zodiaq = "SAGITTARIUS"
+
+
+"""
+        Aries – angielski Baran  (21.03–19.04)
+        Taurus – zodiakalny Byk (20.04–20.05)
+        Gemini – angielskie Bliźnięta (21.05–20.06)
+        Cancer - angielski Rak (21.06–22.07)
+        Leo – czyli angielski Lew (23.07–22.08)
+        Virgo – zodiakalna Panna (23.08–22.09)
+        Libra - Waga po angielsku (23.09–22.10)
+        Scorpio – angielski Skorpion (23.10–21.11)
+        Sagittarius – czyli angielski Strzelec (22.11–21.12)
+        Capricorn – angielski odpowiednik znaku Koziorożec (22.12–19.01)
+        Aquarius – angielski Wodnik (20.01–18.02)
+        Pisces - Ryby po angielsku - Pisces (19.02–20.03)
+
+"""
+
+
 def dob_from_pesel():
     global dob_confirm
     if int(Enter1.get()[2]) == 1 or int(Enter1.get()[2]) == 0:
@@ -136,7 +219,8 @@ def check_pesel():
         result = "Incorrect number of digits in PESEL"
     dob_from_pesel()
     sex_from_pesel()
-    final_result = result + "\n" + dob_confirm + "\n" + sex
+    zodiaq_from_pesel()
+    final_result = result + "\n" + dob_confirm + "\n" + sex + "\n" + zodiaq
     Lab4.config(text=final_result)
 
 
@@ -258,9 +342,74 @@ def generate_pesel():
         L4.config(text=generated_pesel)
         L4a.config(text=inf)
 
+def zodiaq_new_identity():
+    global zodiaq
+    z_month = str(date_of_birth[3:5])
+    z_day = int(date_of_birth[:2])
+    if z_month == "01":
+        if z_day >= 20:
+            zodiaq = "AQUARIUS"
+        elif z_day < 20:
+            zodiaq = "CAPRICORN"
+    if z_month == "02":
+        if z_day >= 19:
+            zodiaq = "PISCES"
+        elif z_day < 19:
+            zodiaq = "AQUARIUS"
+    if z_month == "03":
+        if z_day >= 21:
+            zodiaq = "ARIES"
+        elif z_day < 21:
+            zodiaq = "PISCES"
+    if z_month == "04":
+        if z_day >= 20:
+            zodiaq = "TAURUS"
+        elif z_day < 20:
+            zodiaq = "ARIES"
+    if z_month == "05":
+        if z_day >= 21:
+            zodiaq = "GEMINI"
+        elif z_day < 21:
+            zodiaq = "TAURUS"
+    if z_month == "06":
+        if z_day >= 21:
+            zodiaq = "CANCER"
+        elif z_day < 21:
+            zodiaq = "GEMINI"
+    if z_month == "07":
+        if z_day >= 23:
+            zodiaq = "LEO"
+        elif z_day < 23:
+            zodiaq = "CANCER"
+    if z_month == "08":
+        if z_day >= 23:
+            zodiaq = "VIRGO"
+        elif z_day < 23:
+            zodiaq = "LEO"
+    if z_month == "09":
+        if z_day >= 23:
+            zodiaq = "LIBRA"
+        elif z_day < 23:
+            zodiaq = "VIRGO"
+    if z_month == "10":
+        if z_day >= 23:
+            zodiaq = "SCORPIO"
+        elif z_day < 23:
+            zodiaq = "LIBRA"
+    if z_month == "11":
+        if z_day >= 22:
+            zodiaq = "SAGITTARIUS"
+        elif z_day < 22:
+            zodiaq = "SCORPIO"
+    if z_month == "12":
+        if z_day >= 22:
+            zodiaq = "CAPRICORN"
+        elif z_day < 22:
+            zodiaq = "SAGITTARIUS"
 
 def generate_identity():
     global generated_identity
+    global date_of_birth
     if man_opt.get() == 1:
         name = random.choice(men_names)
         last_name = random.choice(men_surnames)
@@ -314,9 +463,10 @@ def generate_identity():
         generated_pesel = str(position_1) + str(position_2) + str(position_3) + str(position_4) + str(position_5) + str(position_6) + \
             str(position_7) + str(position_8) + str(position_9) + \
             str(position_10) + str(control_sum)
+        zodiaq_new_identity()
         generated_identity = "The generated identity is:\n" + \
             name + " " + last_name + "\nDate of birth: " + \
-            date_of_birth + "\nPESEL: " + generated_pesel
+            date_of_birth + "\nPESEL: " + generated_pesel + "\nThe zodiac sign is " + zodiaq
         Lab6.config(text=generated_identity)
     if woman_opt.get() == 1:
         name = random.choice(women_names)
@@ -371,9 +521,10 @@ def generate_identity():
         generated_pesel = str(position_1) + str(position_2) + str(position_3) + str(position_4) + str(position_5) + str(position_6) + \
             str(position_7) + str(position_8) + str(position_9) + \
             str(position_10) + str(control_sum)
+        zodiaq_new_identity()
         generated_identity = "The generated identity is:\n" + \
             name + " " + last_name + "\nDate of birth: " + \
-            date_of_birth + "\nPESEL: " + generated_pesel
+            date_of_birth + "\nPESEL: " + generated_pesel + "\nThe zodiac sign is " + zodiaq
         Lab6.config(text=generated_identity)
     if man_opt.get() == 1 and woman_opt.get() == 1:
         generated_personality = "Choose only one gender!"
@@ -385,7 +536,7 @@ def generate_identity():
 
 win = tk.Tk()
 win.title("PESEL")
-win.geometry('500x250')
+win.geometry('500x350')
 
 tabGeneral = ttk.Notebook(win)
 tabGeneral.pack()
@@ -395,59 +546,63 @@ tabGeneral.pack()
 tab1_gen = ttk.Frame(tabGeneral)
 tabGeneral.add(tab1_gen, text='GENERATE PESEL')
 
-topframe1 = Frame(tab1_gen)
-topframe1.pack(side=TOP)
+frame10 = Frame(tab1_gen)
+frame10.pack(side=TOP)
+frame11 = Frame(tab1_gen)
+frame11.pack(side=TOP)
+frame12 = Frame(tab1_gen)
+frame12.pack(side=BOTTOM)
+frame13 = Frame(tab1_gen)
+frame13.pack(side=BOTTOM)
 
-midframe1 = Frame(tab1_gen)
-midframe1.pack(side=TOP)
-
-lastframe1 = Frame(tab1_gen)
-lastframe1.pack(side=TOP)
-
-lastframe01 = Frame(tab1_gen)
-lastframe01.pack(side=TOP)
-
-L1 = Label(topframe1, text="Date of birth\n (DDMMYYYY)")
+L1 = Label(frame10, text="Date of birth\n (DDMMYYYY)")
 L1.pack(side=LEFT)
 
 data = StringVar
-E1 = Entry(topframe1, textvariable=data, width=10)
+E1 = Entry(frame10, textvariable=data, width=10)
 E1.pack(side=RIGHT)
 
-L2 = Label(midframe1, text="Select gender")
+L2 = Label(frame11, text="Select gender")
 L2.pack(side=LEFT)
 
+
 man = IntVar()
-check_man = Checkbutton(midframe1,
+check_man = Checkbutton(frame11,
                         text="Male",
                         variable=man)
-check_man.pack(anchor=tk.W)
+check_man.pack(side=RIGHT)
+
 
 woman = IntVar()
-check_woman = Checkbutton(midframe1,
+check_woman = Checkbutton(frame11,
                           text="Female",
                           variable=woman)
-check_woman.pack(anchor=tk.W)
+check_woman.pack(side=RIGHT)
 
-gen_button = Button(lastframe1,
+
+gen_button = Button(frame12,
                     text="GENERATE",
                     command=generate_pesel,
                     state=ACTIVE,
                     compound=LEFT)
 gen_button.pack(side=LEFT)
 
-copy_button0 = Button(lastframe1,
+
+copy_button0 = Button(frame12,
                       text="COPY",
                       command=copy_result,
                       state=ACTIVE,
                       compound=LEFT)
 copy_button0.pack(side=RIGHT)
 
-L4 = Label(lastframe01)
+
+L4 = Label(frame13)
 L4.pack(side=TOP)
 
-L4a = Label(lastframe01)
+
+L4a = Label(frame13)
 L4a.pack(side=BOTTOM)
+
 
 # Zakładka numer 2 SPRAWDZANIE PESEL
 
